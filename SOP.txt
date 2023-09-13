@@ -1,0 +1,8 @@
+create-react-app react-chat-redux
+
+npm install firebase
+Setting up 
+
+npm i sass
+created a Register page
+

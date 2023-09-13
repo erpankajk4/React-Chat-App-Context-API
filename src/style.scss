@@ -1,3 +1,24 @@
+@mixin mobile {
+    @media screen and (max-width:480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width:1200px) {
+        @content;
+    }
+}
+
+// $darkColor:  rgba(100, 148, 237, 0.866);
+
+//-------------- LOGIN & REGISTER PAGE CSS----------- //
 .formContainer {
     background-color: rgba(100, 148, 237, 0.866);
     height: 100vh;
@@ -79,5 +100,287 @@
             margin-top: 10px;
         }
 
+    }
+}
+
+//-------------- HOME PAGE CSS----------- //
+.home {
+    background-color: rgba(100, 148, 237, 0.866);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+
+        @include tablet {
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+        }
+
+        // Sidebar Component
+
+        .sidebar {
+            flex: 1;
+            background-color: #3e3c61;
+            position: relative;
+
+            // NavBar Component
+            .navbar {
+                display: flex;
+                align-items: center;
+                background-color: #2f2d52;
+                padding: 10px;
+                justify-content: space-between;
+                height: 50px;
+                color: #ddddf7;
+
+                .logo {
+                    font-weight: bold;
+
+                    @include tablet {
+                        display: none;
+                    }
+                }
+
+                .user {
+                    display: flex;
+                    gap: 10px;
+
+                    img {
+                        background-color: #ddddf7;
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    span{
+                        padding-top: 5px;
+                    }
+
+                    // Logout Button 
+                    button {
+                        background-color: #5d5b8d;
+                        color: #ddddf7;
+                        font-size: 15px;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        padding: 5px;
+                        @include tablet {
+                            position: absolute;
+                            bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+            //--------------------------------//
+
+            // Search 
+            .search {
+                border-bottom: 1px solid gray;
+
+                .searchForm {
+                    padding: 10px;
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+                        &::placeholder {
+                            color: rgb(175, 175, 175);
+                        }
+                    }
+                }
+            }
+
+            //--------------------------------//
+
+            // User Chat Component (Common in Chat & Search Component)
+            .userChat {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: whitesmoke;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #2f2d52;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .userChatInfo {
+                    span {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+            }
+        }
+
+        // Chat Component
+        .chat {
+            flex: 2;
+
+            .chatInfo {
+                height: 50px;
+                background-color: #5d5b8d;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                color: lightgray;
+            }
+
+            // Chat Bar
+            .chatIcons {
+                display: flex;
+                gap: 10px;
+
+                img {
+                    height: 30px;
+                }
+            }
+
+            .messages {
+                background-color: #ddddf7;
+                padding: 10px;
+                height: calc(100% - 100px); // 50-50px of both chatInfo & input
+                overflow-y: hidden;
+                &:hover{
+                    overflow-y: scroll;
+                }
+
+                .message {
+                    display: flex;
+                    gap: 20px;
+                    margin-bottom: 20px;
+
+                    .messageInfo {
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-weight: 300;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .messageContent {
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p {
+                            background-color: whitesmoke;
+                            padding: 10px 20px;
+                            border-radius: 0 10px 10px 10px;
+                            max-width: max-content;
+                        }
+
+                        img {
+                            width: 50%;
+                        }
+                    }
+
+                    &.owner {
+                        flex-direction: row-reverse;
+
+                        .messageContent {
+                            align-items: flex-end;
+
+                            p {
+                                background-color: #8da4f1;
+                                color: whitesmoke;
+                                border-radius: 10px 0 10px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .input {
+                height: 50px;
+                background-color: whitesmoke;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    color: 18px;
+                    font-size: 18px;
+                    background-color: transparent;
+
+                    &::placeholder {
+                        color: rgb(175, 175, 175);
+                        background-color: whitesmoke;
+                        text-overflow: hidden;
+                    }
+                }
+
+                .send {
+                    min-width: 120px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    img {
+                        opacity: 0.5;
+                        height: 30px;
+                        cursor: pointer;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 6px 10px 3px 4px;
+                        color: whitesmoke;
+                        background-color: #8da4f1;
+                        border-radius: 50%;
+                        justify-content: center;
+                        text-align: center;
+
+                        margin-left: 8px;
+
+                        img {
+                            opacity: 0.8;
+                            height: 30px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

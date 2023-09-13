@@ -4,5 +4,5 @@ npm install firebase
 Setting up 
 
 npm i sass
-created a Register page
+creating Login and Register Page with its CSS.
 

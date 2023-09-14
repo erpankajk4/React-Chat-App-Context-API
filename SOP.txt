@@ -6,3 +6,6 @@ Setting up
 npm i sass
 creating Login and Register Page with its CSS.
 
+created Home & its components with its CSS and make it responsible. export the firebase.
+
+Beutifying the scrollbar

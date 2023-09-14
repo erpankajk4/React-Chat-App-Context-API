@@ -1,6 +1,5 @@
 import React from 'react'
 import attach from "../img/attach-file.png"
-import mic from "../img/mic.png"
 import gallery from "../img/gallery.png"
 import send from "../img/paper-plane.png"
 

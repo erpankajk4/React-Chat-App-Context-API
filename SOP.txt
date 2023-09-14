@@ -9,3 +9,8 @@ creating Login and Register Page with its CSS.
 created Home & its components with its CSS and make it responsible. export the firebase.
 
 Beutifying the scrollbar
+
+creating onSubmit function for Register page.
+setting up storge in Firebase
+npm i  react-router-dom
+created a AuthContext for check User Login & provide to App in index.

@@ -68,6 +68,17 @@
                 cursor: pointer;
             }
 
+            .infoText {
+                width: 250px;
+
+                p {
+                    color: red;
+                    text-wrap: wrap;
+                }
+
+            }
+
+
             // ADD Avatar Image Label
             label {
                 display: flex;
@@ -164,6 +175,7 @@
 
                     span {
                         padding-top: 5px;
+                        text-transform: capitalize;
                     }
 
                     // Logout Button 
@@ -191,8 +203,10 @@
 
                 .searchForm {
                     padding: 10px;
+                    background-color: #5d5b8d;
 
                     input {
+                        width: 100%;
                         background-color: transparent;
                         border: none;
                         color: white;
@@ -231,6 +245,7 @@
                     span {
                         font-size: 18px;
                         font-weight: 500;
+                        text-transform: capitalize;
                     }
 
                     p {
@@ -246,6 +261,22 @@
             flex: 2;
             transition: all ease 1s;
 
+            // App Intro 
+            .appIntro {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                background-color: #a7bcff;
+
+                img {
+                    width: 60%;
+
+                }
+            }
+
+            // Chat Info Component
             .chatInfo {
                 height: 50px;
                 background-color: #5d5b8d;
@@ -255,6 +286,23 @@
                 padding: 10px;
                 color: lightgray;
             }
+
+            span {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                justify-content: space-between;
+                text-transform: capitalize;
+
+                img {
+                    background-color: #ddddf7;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
 
             // Chat Bar
             .chatIcons {
@@ -277,7 +325,7 @@
                     overflow-y: scroll;
                 }
 
-                &::-webkit-scrollbar {  
+                &::-webkit-scrollbar {
                     background-color: transparent;
                     width: 8px;
                 }
@@ -286,8 +334,9 @@
                     background: linear-gradient(#2f2d52, #3e3c61, #5d5b8d);
                     border-radius: 20px;
                 }
+
                 &::-webkit-scrollbar-thumb:hover {
-                    background:linear-gradient( #5d5b8d, #2f2d52, #3e3c61);
+                    background: linear-gradient(#5d5b8d, #2f2d52, #3e3c61);
 
                 }
 
@@ -312,24 +361,30 @@
                         }
                     }
 
+                    // Another User Text Style 
                     .messageContent {
                         max-width: 80%;
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
+                        overflow: hidden;
 
                         p {
                             background-color: whitesmoke;
                             padding: 10px 20px;
                             border-radius: 0 10px 10px 10px;
                             max-width: max-content;
+                            color: #3a3863;
                         }
 
                         img {
-                            width: 50%;
+                            width: 60%;
+                            border: 3px solid #8583af9e;
+                            border-radius: 0px 20px 0px 20px;
                         }
                     }
 
+                    // Owner Chats Style
                     &.owner {
                         flex-direction: row-reverse;
 
@@ -340,12 +395,20 @@
                                 background-color: #8da4f1;
                                 color: whitesmoke;
                                 border-radius: 10px 0 10px 10px;
+                                color: #2f2d52;
+                            }
+
+                            img {
+                                width: 60%;
+                                border: 3px solid #8583af9e;
+                                border-radius: 20px 0 20px 0px;
                             }
                         }
                     }
                 }
             }
 
+            // Input bar 
             .input {
                 height: 50px;
                 background-color: whitesmoke;

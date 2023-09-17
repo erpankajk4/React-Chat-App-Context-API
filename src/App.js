@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import "./style.scss";
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
+import { ToastContainer } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -23,7 +25,16 @@ function App() {
     { path: "/register", element: <Register /> },
   ])
   return (
+    <>
     <RouterProvider router={router} />
+    <ToastContainer position="top-right"
+        autoClose={500}
+        hideProgressBar={false}
+        closeOnClick={false}
+        pauseOnHover={true}
+        draggable={true}
+      />
+    </>
   );
 }
 

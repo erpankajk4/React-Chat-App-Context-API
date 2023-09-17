@@ -14,3 +14,11 @@ creating onSubmit function for Register page.
 setting up storge in Firebase
 npm i  react-router-dom
 created a AuthContext for check User Login & provide to App in index.
+
+npm i uuid
+npm install react-toastify  
+
+Assigning User details in Navbar.
+Make Search Component functional
+make Chat Component functional
+Added some minor features

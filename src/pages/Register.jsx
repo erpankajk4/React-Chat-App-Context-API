@@ -7,6 +7,8 @@ import { storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
+// React-Tostify
+import { toast } from 'react-toastify';
 
 const Register = () => {
   // State for error handling and loading indicator
@@ -16,12 +18,12 @@ const Register = () => {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
 
     setLoading(true); // Set loading state to true during the registration process
 
     // Extract form input values
-    const userName = e.target[0].value;
+    const userName = e.target[0].value.toLowerCase();
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
@@ -37,9 +39,11 @@ const Register = () => {
       // Upload the selected file to Firebase Storage
       await uploadBytesResumable(storageRef, file);
 
+      // Dummy Avatar
+      const dummyAvatarDownloadURL = "https://firebasestorage.googleapis.com/v0/b/react-chat-d4d47.appspot.com/o/dummyAvatar.gif?alt=media&token=22ce7956-0a8d-4ace-88db-ebee8a6805f7";
       // Get the download URL of the uploaded image
-      const downloadURL = await getDownloadURL(storageRef);
-
+      const downloadURL = file ? await getDownloadURL(storageRef) : dummyAvatarDownloadURL;
+      console.log(downloadURL);
       // Update the user's profile with userName and photoURL
       await updateProfile(res.user, {
         displayName: userName,
@@ -56,13 +60,13 @@ const Register = () => {
       });
 
       // Create an empty user chats document in Firestore
-
       await setDoc(doc(db, "userChats", res.user.uid), {});
 
       // Navigate to "/" after successful registration
       navigate("/");
       window.location.reload();
     } catch (error) {
+      toast.error("Something went wrong!!");
       console.error(error); // Log any errors for debugging
       setErr(true); // Set error state to true if an error occurs
     } finally {
@@ -85,8 +89,13 @@ const Register = () => {
             <span>Add your Avatar</span>
           </label>
           <button disabled={loading}>Sign up</button>
-          {loading && "Uploading and compressing the image please wait..."}
-          {err && <span>Something went wrong!!</span>}
+
+          <div className="infoText">
+            {loading && <p>Uploading and compressing the image please wait...</p>}
+            {err && <p>Something went wrong!!</p>}
+          </div>
+
+
         </form>
         <p>
           You already have an account? <Link to="/login">Login</Link>

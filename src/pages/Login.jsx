@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+// React-Tostify
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -20,6 +22,7 @@ const Login = () => {
 
     } catch (error) {
       setErr(true);
+      toast.error("Invalid email or password");
     }
   }
 
@@ -33,7 +36,7 @@ const Login = () => {
           <input type="password" placeholder='Enter your password' required />
           <input type='file' id='file' style={{ display: "none" }} />
           <button>Log In</button>
-          {err && <span>Something went Wrong!!</span>}
+          {err && <span>Invalid email or password</span>}
         </form>
         <p>
           You don't have an account? <Link to="/register">Register</Link>

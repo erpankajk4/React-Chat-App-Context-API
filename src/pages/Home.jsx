@@ -8,8 +8,6 @@ const Home = () => {
       <div className='container'>
         <Sidebar />
         <Chat />
-
-
       </div>
     </div>
   )

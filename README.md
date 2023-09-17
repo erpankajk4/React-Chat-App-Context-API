@@ -3,8 +3,11 @@
 The React Chat App is a web-based chat application built using React, Firebase, and Context API. It allows users to have text conversations with other users in Real Time, create new conversations, and persist chat data even after refreshing the page.
 
 ## Hosted Link on Netlify
- - Click the Link to Preview <br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0c8ecddc-7bf5-45d3-8f79-df5d8485a808/deploy-status)](https://app.netlify.com/sites/shopyshop-redux/deploys) <br/>
+ https://react-chat-app-context-api.netlify.app - Click the Link to Preview <br/>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a6f6533-4d52-4ccd-92cd-30a8cd7d8af0/deploy-status)](https://app.netlify.com/sites/react-chat-app-context-api/deploys) <br/>
+
+## YouTube Link
+https://youtu.be/tcyXNSMy7mE <br/>
 
 ## Table of Contents
 - [Demo](#demo)
@@ -15,7 +18,7 @@ The React Chat App is a web-based chat application built using React, Firebase, 
 - [Folder Structure](#folder-structure)
 
 ## Demo
-![Home Page](https://github.com/erpankajk4/ShopyShop-Redux-Version-/assets/118353291/41681f92-6146-455a-9564-b079ec5b6a98)
+![home](https://github.com/erpankajk4/React-Chat-App-Context-API/assets/118353291/ec76cafd-505c-4f86-ad41-2d4688c69e77)
 
 ## Features
 
@@ -50,7 +53,7 @@ Follow these steps to set up and run the React Chat App on your local machine.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/erpankajk4/ShopyShop-Redux-Version-.git
+   git clone https://github.com/erpankajk4/React-Chat-App-Context-API.git
    cd react-chat-context-api
    npm install
    ```
@@ -126,3 +129,11 @@ Data persistence is achieved through Firebase. Messages and conversations are st
  ┣ 📜.gitignore<br />
  ┣ 📜package.json<br />
  ┗ 📜README.md<br />
+![chat](https://github.com/erpankajk4/React-Chat-App-Context-API/assets/118353291/5b51ace0-7dd0-404c-8ce5-e54edc092d5a) <br />
+![login](https://github.com/erpankajk4/React-Chat-App-Context-API/assets/118353291/046671e2-23c8-4135-9d19-d4450be63788) <br />
+![register](https://github.com/erpankajk4/React-Chat-App-Context-API/assets/118353291/34f44270-8c1f-4931-bfc3-fa743b38c074)
+
+
+
+
+ 

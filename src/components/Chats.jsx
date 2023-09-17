@@ -26,7 +26,6 @@ const Chats = () => {
         dispatch({ type: "CHANGE_USER", payload: user })
     }
 
-
     // console.log(chats); - gives an object
     // console.log(Object.entries(chats)); - gives an array
     return (

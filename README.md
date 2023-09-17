@@ -1,4 +1,4 @@
-# ShopyShop (Redux Version)
+# React Chat App (Context API Version)
 
 The React Chat App is a web-based chat application built using React, Firebase, and Context API. It allows users to have text conversations with other users in Real Time, create new conversations, and persist chat data even after refreshing the page.
 
@@ -27,6 +27,13 @@ The React Chat App is a web-based chat application built using React, Firebase, 
 - **Error Handling**: Provides error and success notifications.
 - **Data Persistence**: Utilizes Firebase for data storage to ensure messages and conversations are intact after refresh.
 
+## Some Minor Features
+- Messages can be sent by pressing Enter.
+- Messages display "just now" if the message was sent less than 5 minutes ago; otherwise, the sent time is shown.
+- A default avatar image is used from Firebase storage if one is not selected.
+- Auto-scrolling to the last message is implemented using the `ref.current.scrollIntoView` function.
+- A customized scrollbar is used.
+
 ## Technologies Used
 
 - **React**: For building the user interface.
@@ -38,13 +45,13 @@ The React Chat App is a web-based chat application built using React, Firebase, 
 
 ## Getting Started
 
-Follow these steps to set up and run the ShopyShop Redux Version on your local machine.
+Follow these steps to set up and run the React Chat App on your local machine.
 
 1. Clone the repository:
 
    ```
    git clone https://github.com/erpankajk4/ShopyShop-Redux-Version-.git
-   cd ShopyShop-redux
+   cd react-chat-context-api
    npm install
    ```
 2. Install the dependencies:
@@ -72,3 +79,50 @@ Firebase is used for data storage and retrieval. Firestore is employed to store 
 Data persistence is achieved through Firebase. Messages and conversations are stored in Firestore, ensuring that data remains intact even after refreshing the page.
 
 ## Folder Structure
+📦react-chat-context-api<br />
+ ┣ 📂DEMO<br />
+ ┃ ┣ 📜chat.png<br />
+ ┃ ┣ 📜home.png<br />
+ ┃ ┣ 📜login.png<br />
+ ┃ ┗ 📜register.png<br />
+ ┣ 📂public<br />
+ ┃ ┣ 📜index.html<br />
+ ┃ ┗ 📜logo.png<br />
+ ┣ 📂src<br />
+ ┃ ┣ 📂components<br />
+ ┃ ┃ ┣ 📜AppIntro.jsx<br />
+ ┃ ┃ ┣ 📜Chat.jsx<br />
+ ┃ ┃ ┣ 📜Chats.jsx<br />
+ ┃ ┃ ┣ 📜Input.jsx<br />
+ ┃ ┃ ┣ 📜Message.jsx<br />
+ ┃ ┃ ┣ 📜Messages.jsx<br />
+ ┃ ┃ ┣ 📜Navbar.jsx<br />
+ ┃ ┃ ┣ 📜Search.jsx<br />
+ ┃ ┃ ┗ 📜Sidebar.jsx<br />
+ ┃ ┣ 📂context<br />
+ ┃ ┃ ┣ 📜AuthContext.js<br />
+ ┃ ┃ ┗ 📜ChatContext.js<br />
+ ┃ ┣ 📂img<br />
+ ┃ ┃ ┣ 📜add-user.gif<br />
+ ┃ ┃ ┣ 📜addAvatar.png<br />
+ ┃ ┃ ┣ 📜appIntro.gif<br />
+ ┃ ┃ ┣ 📜attach-file.png<br />
+ ┃ ┃ ┣ 📜dummyAvatar.gif<br />
+ ┃ ┃ ┣ 📜gallery.png<br />
+ ┃ ┃ ┣ 📜loading.gif<br />
+ ┃ ┃ ┣ 📜more.png<br />
+ ┃ ┃ ┣ 📜paper-plane.png<br />
+ ┃ ┃ ┣ 📜train-loader.gif<br />
+ ┃ ┃ ┗ 📜video.gif<br />
+ ┃ ┣ 📂pages<br />
+ ┃ ┃ ┣ 📜Home.jsx<br />
+ ┃ ┃ ┣ 📜Login.jsx<br />
+ ┃ ┃ ┗ 📜Register.jsx<br />
+ ┃ ┣ 📜App.js<br />
+ ┃ ┣ 📜firebase.js<br />
+ ┃ ┣ 📜index.css<br />
+ ┃ ┣ 📜index.js<br />
+ ┃ ┗ 📜style.scss<br />
+ ┣ 📜.gitignore<br />
+ ┣ 📜package.json<br />
+ ┗ 📜README.md<br />

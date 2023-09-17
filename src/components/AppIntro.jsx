@@ -3,7 +3,7 @@ import appIntro from "../img/appIntro.gif"
 const AppIntro = () => {
   return (
     <div className='appIntro'>
-<img src={appIntro} alt="" />
+      <img src={appIntro} alt="" />
       <p>Send and receive messages & Photos</p>
       <br />
       <br />

@@ -23,11 +23,12 @@ const Input = () => {
   const { data } = useContext(ChatContext);
 
   const handleSend = async () => {
+    //If both Text and Image are not there
     if (!text && !img) {
       toast.warn("Please type Something or add an image to your");
       return;
     }
-
+    //If  Image is there only
     if (img) {
       setIsUploading(true);
       const storageRef = ref(storage, `chatImg/${uuid()}`);
@@ -49,6 +50,7 @@ const Input = () => {
       });
 
     } else {
+      //If  text  is there only
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -59,10 +61,7 @@ const Input = () => {
         }),
       });
     }
-    // Clear Input 
-    setImg(null);
-    setText("");
-
+    
     // Upadating the last message for Owner 
     await updateDoc(doc(db, "userChats", currentUser.uid), {
       [data.chatId + ".lastMessage"]: {
@@ -71,14 +70,19 @@ const Input = () => {
       [data.chatId + ".date"]: serverTimestamp(),
     });
     // Upadating the last message for another user 
+
     await updateDoc(doc(db, "userChats", data.user.uid), {
       [data.chatId + ".lastMessage"]: {
         text,
       },
       [data.chatId + ".date"]: serverTimestamp(),
     });
-
+    
+    // Clear Input 
+    setImg(null);
+    setText("");
   }
+
   // Make Send Button function by pressing enter
   const handleKeyPress = (e) => {
     if (e.code === 'Enter') {
@@ -113,7 +117,7 @@ const Input = () => {
         {/* Photo Upload  */}
         <input type="file" id='file'
           style={{ display: "none" }}
-          onChange={(e) => setImg(e.target.files[0])} 
+          onChange={(e) => setImg(e.target.files[0])}
           onKeyDown={handleKeyPress} />
         <label htmlFor="file">
           {isUploading ? (
